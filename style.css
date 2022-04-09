@@ -8,13 +8,6 @@
     cursor: pointer;
 }
 .btn-center{
-    text-align: left;
-}
-ul{
-    list-style-type: none;
-}
-
-li{
     text-align: center;
 }
 
