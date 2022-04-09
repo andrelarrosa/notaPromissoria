@@ -1,0 +1,27 @@
+.btn{
+    border: 0px;
+    padding: 2%;
+    background-color: #3396FF;
+    height: 10%;
+    border-radius: 20px;
+    color: #FFFF;
+    cursor: pointer;
+}
+.btn-center{
+    text-align: left;
+}
+ul{
+    list-style-type: none;
+}
+
+li{
+    text-align: center;
+}
+
+#menu{
+    font-family: Verdana,
+    Geneva,
+    Tahoma,
+    sans-serif;
+    text-align: center;
+}
