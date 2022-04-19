@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nota Promissória</title>
 </head>
+<link rel="stylesheet" href="./style.css">
 <body>
     <form action="">
-        <input type="text" name="" id="">
+        <div class="float-left">
+            <label>Quantidade Promissórias</label>
+            <input class="input-text float-right" type="number" placeholder="quantidade" name="qtdePromissorias">
+        </div>
+        <div class="float-left">
+            <label class="label-input">Valor:</label>
+            <input class="input-text" type="number" name="valorNota">
+        </div>
+        <div class="float-left">
+            <label class="label-input">1º Vencimento</label>
+            <input class="input-text" type="date" name="primeiroVencimento">
+        </div>
+        <div class="float-left">
+            <label class="label-input">Nome do Credor</label>
+            <input class="input-text" type="text" name="nomeDoCredor">
+        </div>
+        <div class="float-left" style="margin-right: 30%;">
+            <label class="label-input">CPF ou CNPJ do Credor</label>
+            <input class="input-text" type="text" name="cpfCnpj">
+        </div>
+        <hr>
+        <h3>Dados do Devedor</h3>
+        <label>Nome do Devedor</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>CPF ou CNPJ do devedor</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>Rua</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>Ponto de Referência</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>Número</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>Bairro</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>Cidade</label>
+        <input class="input-text" type="text" name="valorNota">
+        <label>Estado</label>
+        <select class="input-text" name="" id=""></select>
+        <label>CEP</label>
+        <input class="input-text" type="text" name="valorNota">
     </form>
 </body>
 </html>
