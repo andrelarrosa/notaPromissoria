@@ -8,47 +8,106 @@
 </head>
 <link rel="stylesheet" href="./style.css">
 <body>
-    <form action="">
-        <div>
-            <label>Quantidade Promissórias</label>
-            <input class="input-text float-right" type="number" placeholder="quantidade" name="qtdePromissorias">
+    <div class="main">
+        <form action="">
+            <h3>Dados do Credor</h3>
+            <div class="row">
+                <div class="column w-75">
+                    <div class="content" >
+                        <label class="label-input">Nome do Credor</label>
+                        <input class="input-text" type="text" style="padding-right: 50%;" name="nomeDoCredor">                       
+                    </div>
+                </div>
+                <div class="column w-75">
+                    <div class="content">
+                        <label class="label-input">CPF ou CNPJ do Credor</label>
+                        <input class="input-text" style="padding-right: 10%;" type="text" name="cpfCnpj">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="content">
+                        <label>Quantidade Promissórias</label>
+                        <input class="input-text" type="number" placeholder="quantidade" name="qtdePromissorias">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label class="label-input">Valor:</label>
+                        <input class="input-text" type="number" name="valorNota">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label class="label-input">1º Vencimento</label>
+                        <input class="input-text" type="date" name="primeiroVencimento">
+                    </div>
+                </div>
+            </div>
+                <h3>Dados Devedor</h3>      
+                <div class="row">
+                    <div class="column w-75">
+                        <div class="content">
+                            <label>Nome do Devedor</label>
+                            <input class="input-text" style="padding-right: 50%;" type="text" name="valorNota">
+                        </div>
+                    </div>
+                    <div class="column w-75">
+                        <div class="content">
+                            <label>CPF ou CNPJ do devedor</label>
+                            <input class="input-text" style="padding-right: 10%;" type="text" name="valorNota">
+                        </div>
+                    </div>
+                </div>            
+            <div class="row">
+                <div class="column">
+                    <div class="content">
+                        <label>Rua</label>
+                        <input class="input-text" type="text" name="valorNota">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Cidade</label>
+                        <input class="input-text" type="text" name="valorNota">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Estado</label>
+                        <select class="input-text" name="" id=""></select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>CEP</label>
+                        <input class="input-text" type="text" name="valorNota">     
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="content">
+                        <label>Ponto de Referência</label>
+                        <input class="input-text" type="text" name="valorNota">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Número</label>
+                        <input class="input-text" type="text" name="valorNota">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Bairro</label>
+                        <input class="input-text" type="text" name="valorNota">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label class="label-input">Valor:</label>
-            <input class="input-text" type="number" name="valorNota">
-        </div>
-        <div>
-            <label class="label-input">1º Vencimento</label>
-            <input class="input-text" type="date" name="primeiroVencimento">
-        </div>
-        <div>
-            <label class="label-input">Nome do Credor</label>
-            <input class="input-text" type="text" name="nomeDoCredor">
-        </div>
-        <div>
-            <label class="label-input">CPF ou CNPJ do Credor</label>
-            <input class="input-text" type="text" name="cpfCnpj">
-        </div>
-        <hr>
-        <h3>Dados do Devedor</h3>
-        <label>Nome do Devedor</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>CPF ou CNPJ do devedor</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>Rua</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>Ponto de Referência</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>Número</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>Bairro</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>Cidade</label>
-        <input class="input-text" type="text" name="valorNota">
-        <label>Estado</label>
-        <select class="input-text" name="" id=""></select>
-        <label>CEP</label>
-        <input class="input-text" type="text" name="valorNota">
     </form>
+</div>
 </body>
 </html>

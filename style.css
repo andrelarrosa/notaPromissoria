@@ -5,6 +5,11 @@ body{
     sans-serif;
 }
 
+.main{
+    max-width: 1000px;
+    margin: auto;
+}
+
 .btn{
     border: 0px;
     padding: 2%;
@@ -28,6 +33,55 @@ body{
     margin-right: 100%;
     border-radius: 5px;
     margin-bottom: 1%;
-    padding: 0.5%;
+    padding: 10px;
 }
 
+.content{
+    background-color: white;
+    padding: 10px;
+}
+
+.row{
+    margin: 8px -16px;
+}
+
+.row,   
+.row>.column{
+    padding: 8px;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column{
+    border: 1px, solid, black;
+    float: left;
+    width: 24%;
+}
+
+@media screen and (max-width:900px){
+    .column{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .column{
+        width: 100%;
+    }
+}
+
+.mr-100{
+    margin-right: 100%;
+}
+
+.w-95{
+    width: 95%;
+}
+
+.w-75{
+    width: 75%;
+}
