@@ -8,6 +8,8 @@ body{
 .main{
     max-width: 1000px;
     margin: auto;
+    padding: auto;
+
 }
 
 .btn{
@@ -84,4 +86,16 @@ body{
 
 .w-75{
     width: 75%;
+}
+
+.w-50{
+    width: 54%;
+}
+
+.pl-40{
+    padding-left: 40%;
+}
+
+.pr-0{
+    padding-right: 0%;
 }
