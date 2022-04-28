@@ -14,13 +14,13 @@
                     <div class="column w-75">
                         <div class="content" >
                             <label class="label-input">Nome do Credor</label>
-                            <input class="input-text" type="text" style="padding-right: 50%;" name="nomeDoCredor" required>
+                            <input class="input-text" type="text" style="padding-right: 50%;" id="nomeDoCredor" required>
                         </div>
                     </div>
                     <div class="column w-75">
                         <div class="content">
                             <label class="label-input">CPF ou CNPJ do Credor</label>
-                            <input class="input-text" style="padding-right: 10%;" type="text" name="cpfCnpj" required>
+                            <input class="input-text" style="padding-right: 10%;" type="text" id="cpfCnpjCredor" >
                         </div>
                     </div>
                 </div>
@@ -28,13 +28,19 @@
                     <div class="column">
                         <div class="content">
                             <label class="label-input">Valor:</label>
-                            <input class="input-text" type="number" name="valorNota" required>
+                            <input class="input-text" type="number" id="valorNota" >
                         </div>
                     </div>
                     <div class="column">
                         <div class="content">
                             <label class="label-input">1º Vencimento</label>
-                            <input class="input-text" type="date" name="primeiroVencimento" required>
+                            <input class="input-text" type="date" id="primeiroVencimento" >
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="content">
+                            <label class="label-input">Data Emissão</label>
+                            <input class="input-text" type="date" id="dataEmissao" >
                         </div>
                     </div>
                 </div>
@@ -43,13 +49,13 @@
                     <div class="column w-75">
                         <div class="content">
                             <label>Nome do Devedor</label>
-                            <input class="input-text" style="padding-right: 50%;" type="text" name="valorNota" required>
+                            <input class="input-text" style="padding-right: 50%;" type="text" id="nomeDevedor" >
                         </div>
                     </div>
                     <div class="column w-75">
                         <div class="content">
                             <label>CPF ou CNPJ do devedor</label>
-                            <input class="input-text" style="padding-right: 10%;" type="text" name="valorNota" required>
+                            <input class="input-text" style="padding-right: 10%;" type="text" id="cpfCnpjDevedor" >
                         </div>
                     </div>
                 </div>            
@@ -57,42 +63,42 @@
                     <div class="column">
                         <div class="content">
                             <label>CEP</label>
-                            <input class="input-text" type="text" name="valorNota" required>
+                            <input class="input-text" type="text" id="cep" >
                         </div>
                     </div>
                     <div class="column">
                         <div class="content">
                             <label>Rua</label>
-                            <input class="input-text" type="text" name="valorNota" required>
+                            <input class="input-text" type="text" id="rua" >
                         </div>
                     </div>
                     <div class="column">
                         <div class="content">
                             <label>Cidade</label>
-                            <input class="input-text" type="text" name="valorNota" required>
+                            <input class="input-text" type="text" id="cidade" >
                         </div>
                     </div>
                     <div class="column">
                         <div class="content">
                             <label>Estado</label>
-                            <select class="input-text" name="" id="" required>
-                                <option value="pr">PARANÁ</option>
-                                <option value="pr">SÃO PAULO</option>
-                                <option value="pr">AMAZONAS</option>
-                                <option value="pr">SANTA CATARINA</option>
+                            <select class="input-text" id="estado" >
+                                <option value="PR">PARANÁ</option>
+                                <option value="SP">SÃO PAULO</option>
+                                <option value="AM">AMAZONAS</option>
+                                <option value="SC">SANTA CATARINA</option>
                             </select>
                         </div>
                     </div>
                     <div class="column">
                         <div class="content">
                             <label>Número</label>
-                            <input class="input-text" type="text" name="valorNota" required>
+                            <input class="input-text" type="text" id="numero" >
                         </div>
                     </div>
                     <div class="column">
                         <div class="content">
                             <label>Bairro</label>
-                            <input class="input-text" type="text" name="valorNota" required>
+                            <input class="input-text" type="text" id="bairro" >
                         </div>
                     </div>
                 </div>
@@ -100,7 +106,7 @@
                     <div class="column w-50">
                         <div class="content">
                             <label>Ponto de Referência</label>
-                            <input class="input-text" type="text" style="padding-right: 100%;" name="valorNota" required>
+                            <input class="input-text" type="text" style="padding-right: 100%;" id="referencia" >
                         </div>
                     </div>             
                 </div>
@@ -111,43 +117,114 @@
 </body>
 </html>
 <script>
+    function anoParaExtenso(data){
+        data = data.split('-');
+        var mes = data[1]; 
+        var retorno = "";
+        var auxiliar = ['JANEIRO','FEVEREIRO','MARÇO','ABRIL','MAIO','JUNHO','JULHO','AGOSTO','SETEMBRO','OUTUBRO','NOVEMBRO','DEZEMBRO'];
+        retorno = data[2] + " DE " + auxiliar[mes-1] + " DE " + data[0];
+        return retorno;
+    }
     function carregarNota(){
-        
-        const nota = '';
-    // document.getElementById('main').appendChild(nota);
+    var nomeCredor = document.getElementById('nomeDoCredor').value;
+    var cpfCnpjCredor = document.getElementById('cpfCnpjCredor').value;
+    var valorNota = document.getElementById('valorNota').value;
+    var primeiroVencimento = anoParaExtenso(document.getElementById('primeiroVencimento').value);
+    var nomeDevedor = document.getElementById('nomeDevedor').value;
+    var cpfCnpjDevedor = document.getElementById('cpfCnpjDevedor').value;
+    const nota = ' <div class="borda">\
+        <p style="text-align: center;">\
+            <b>NOTA PROMISSÓRIA (Nº1 de 1)</b>\
+        </p>\
+        <p>Vencimento: <b>(dia) de (mês) de (ano)</b>.</p>\
+        <p><b>R$ '+valorNota+'</b></p>\
+        <p>No dia <b >'+primeiroVencimento+'</b> pagarei por esta única via de NOTA PROMISSÓRIA a <b class="background">'+nomeCredor+'</b>, CPF (ou CNPJ) nº '+cpfCnpjCredor+' ou a sua ordem a quantia de (valor por extenso) reais.</p>\
+        <p>Pagável na Rua (informar), nº (informar) - (bairro) na cidade de (município) - (UF).</p>\
+        <p>Emitente: '+nomeDevedor+', CPF (ou CNPJ) nº '+cpfCnpjDevedor+', com endereço à Rua (informar), nº (informar) - (bairro) na cidade de (município) - (UF) - CEP (CEP).</p>\
+        <p>(município) - (UF), (dia da emissão) de (mês) de (ano).</p>\
+        <hr style="margin-left: 10%; margin-right: 10%; margin-top: 10%;">\
+        <p style="text-align: center;">(nome do emitente)</p>\
+    </div>';
+    
+    // document.getElementById('nota').appendChild(nota);
     document.body.innerHTML = nota;
     }
 
-    function extenso(numero){
-        var retorno = "";
-        var auxiliar1 = ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
-        var auxiliar2 = ["dez", "vinte", "trinta", "quarenta", "cinqüenta", "sessenta", "setenta", "oitenta", "noventa"];
-        console.log(numero);
-        if  (numero > 1000){
-            retorno = 'Não posso calcular';
-        } else {
-            if (numero < 20){
-                retorno = auxiliar1[numero];
-            } else if(numero < 100){
-                var temp = numero.toString().split('');
-                var primeiro_numero = temp[0];
-                var segundo_numero = temp[1];
-                retorno = auxiliar2[primeiro_numero-1] 
-                if (segundo_numero > 0){
-                    retorno += " e " + auxiliar1[primeiro_numero];
-                }
-            } else if(numero < 1000){
-                var temp = numero.toString().split('');
-                var primeiro_numero = temp[0];
-                var segundo_numero = temp[1];
-                retorno = auxiliar2[primeiro_numero-1] 
-                if (segundo_numero > 0){
-                    retorno += " e " + auxiliar1[primeiro_numero];
-                }
-            }
-        }
-    return retorno;
-    }
+
+
+    
 </script>
 
-<!-- -->
+<!--
+
+     var auxiliar4 = ['mil'];
+    //     if(numero < 20){
+    //         retorno = auxiliar1[numero];
+    //     }else if(numero < 100){
+    //         var temp = numero.toString().split('');
+    //         var primeiro_numero = temp[0];
+    //         var segundo_numero = temp[1];
+    //         retorno = auxiliar2[primeiro_numero-1] 
+    //         if (segundo_numero > 0){
+    //             retorno += " E " + auxiliar1[primeiro_numero-1];
+    //         }
+    //     }else if(numero < 1000){
+    //         var temp = numero.toString().split('');
+    //         var primeiro_numero = temp[0];
+    //         var segundo_numero = temp[1];
+    //         var terceiro_numero = temp[2];
+
+    //         if((segundo_numero > 0 || terceiro_numero > 0) && primeiro_numero == 1){
+    //             retorno += auxiliar3[primeiro_numero+1];
+    //         }else if(!(segundo_numero > 0 || terceiro_numero > 0) && primeiro_numero == 1){
+    //             retorno += auxiliar3[primeiro_numero-1];
+    //         }else{
+    //             retorno += auxiliar3[primeiro_numero];
+    //         }
+
+    //         if(terceiro_numero < 9 && segundo_numero > 1){
+    //             retorno += " E " + auxiliar2[segundo_numero+1];
+    //             if(terceiro_numero > 0){
+    //                 retorno += " E " + auxiliar1[terceiro_numero];
+    //             }
+    //         }else if(segundo_numero == 1 && terceiro_numero < 9){
+    //             var index = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+    //             var indice = index[terceiro_numero-1];
+    //             retorno += " E " + auxiliar1[indice];
+    //         }
+
+
+    //     }
+    //     return retorno;
+    // }    
+    // function extenso(numero){
+    //     var retorno = "";
+    //     var auxiliar1 = ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
+    //     var auxiliar2 = ["dez", "vinte", "trinta", "quarenta", "cinqüenta", "sessenta", "setenta", "oitenta", "noventa"];
+    //     console.log(numero);
+    //     if  (numero > 1000){
+    //         retorno = 'Não posso calcular';
+    //     } else {
+    //         if (numero < 20){
+    //             retorno = auxiliar1[numero];
+    //         } else if(numero < 100){
+    //             var temp = numero.toString().split('');
+    //             var primeiro_numero = temp[0];
+    //             var segundo_numero = temp[1];
+    //             retorno = auxiliar2[primeiro_numero-1] 
+    //             if (segundo_numero > 0){
+    //                 retorno += " e " + auxiliar1[primeiro_numero];
+    //             }
+    //         } else if(numero < 1000){
+    //             var temp = numero.toString().split('');
+    //             var primeiro_numero = temp[0];
+    //             var segundo_numero = temp[1];
+    //             retorno = auxiliar2[primeiro_numero-1] 
+    //             if (segundo_numero > 0){
+    //                 retorno += " e " + auxiliar1[primeiro_numero];
+    //             }
+    //         }
+    //     }
+    // return retorno;
+ -->
+
