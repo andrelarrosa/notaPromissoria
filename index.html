@@ -27,12 +27,6 @@
                 <div class="row">
                     <div class="column">
                         <div class="content">
-                            <label>Quantidade Promissórias</label>
-                            <input class="input-text" type="number" name="qtdePromissorias" required>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="content">
                             <label class="label-input">Valor:</label>
                             <input class="input-text" type="number" name="valorNota" required>
                         </div>
@@ -113,94 +107,47 @@
                 <button class="btn btn-center" type="button" onclick="carregarNota()">Emitir Nota Promissoria</button>
             </div>
 </div>
+<div id="nota"></div>
 </body>
 </html>
 <script>
     function carregarNota(){
         
-        const nota = '<div class="row">\
-            <h3>Dados do Credor</h3>\
-            <div class="column w-75">\
-                <div class="content" >\
-                    <input class="input-text" type="text" style="padding-right: 50%;" name="nomeDoCredor" disabled>\
-                </div>\
-            </div>\
-            <div class="column w-75">\
-                <div class="content">\
-                    <input class="input-text" style="padding-right: 10%;" type="text" name="cpfCnpj" disabled>\
-                </div>\
-            </div>\
-        </div>\
-        <div class="row">\
-            <div class="column">\
-                <div class="content">\
-                        <input class="input-text" type="number" name="qtdePromissorias" disabled>\
-                </div>\
-            </div>\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="number" name="valorNota" disabled>\
-                </div>\
-            </div\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="date" name="primeiroVencimento" disabled>\
-                </div>\
-            </div>\
-        </div>\
-        <div class="row">\
-            <h3>Dados Devedor</h3>      \
-            <div class="column w-75">\
-                <div class="content">\
-                    <input class="input-text" style="padding-right: 50%;" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-            <div class="column w-75">\
-                <div cl\ass="content">\
-                    <input class="input-text" style="padding-right: 10%;" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-        </div>\
-        <div class="row">\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-            <div class="column">\
-                <div class="content">\
-                    <input class="input-text" type="text" name="valorNota" disabled>\
-                </div>\
-            </div>\
-        </div>\
-        <div class="row">\
-            <div class="column w-50">\
-                <div class="content">\
-                    <input class="input-text" type="text" style="padding-right: 100%;" name="valorNota" disabled>\
-                </div>\
-            </div>\
-        </div>';
+        const nota = '';
     // document.getElementById('main').appendChild(nota);
     document.body.innerHTML = nota;
     }
+
+    function extenso(numero){
+        var retorno = "";
+        var auxiliar1 = ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
+        var auxiliar2 = ["dez", "vinte", "trinta", "quarenta", "cinqüenta", "sessenta", "setenta", "oitenta", "noventa"];
+        console.log(numero);
+        if  (numero > 1000){
+            retorno = 'Não posso calcular';
+        } else {
+            if (numero < 20){
+                retorno = auxiliar1[numero];
+            } else if(numero < 100){
+                var temp = numero.toString().split('');
+                var primeiro_numero = temp[0];
+                var segundo_numero = temp[1];
+                retorno = auxiliar2[primeiro_numero-1] 
+                if (segundo_numero > 0){
+                    retorno += " e " + auxiliar1[primeiro_numero];
+                }
+            } else if(numero < 1000){
+                var temp = numero.toString().split('');
+                var primeiro_numero = temp[0];
+                var segundo_numero = temp[1];
+                retorno = auxiliar2[primeiro_numero-1] 
+                if (segundo_numero > 0){
+                    retorno += " e " + auxiliar1[primeiro_numero];
+                }
+            }
+        }
+    return retorno;
+    }
 </script>
+
+<!-- -->
