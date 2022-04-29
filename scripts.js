@@ -23,7 +23,7 @@ function carregarNota() {
     var numero = document.getElementById('numero').value;
     var bairro = document.getElementById('bairro').value;
     var referencia = document.getElementById('referencia').value;
-    var quantidadeNotas = document.getElementById('quantidade').value;
+    var quantidadeNotas = document.getElementById('quantidade').value != ''? document.getElementById('quantidade').value:1;
     for(var i = 1; i<=quantidadeNotas; i++){
         nota += ' <div class="borda">\
         <p style="text-align: center;">\
