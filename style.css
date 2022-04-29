@@ -27,7 +27,7 @@ body{
 }
 
 .input-text{
-    border-color: #c6c6c6;
+    border: 1px solid #c6c6c6; display: inline-block; box-sizing: border-box;
     border-width: 1px;
     margin-right: 100%;
     border-radius: 5px;

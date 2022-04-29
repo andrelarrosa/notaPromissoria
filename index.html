@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,156 +10,158 @@
 
 <body style="overflow-x: hidden;">
     <div id="main" class="main">
-        <h3 class="pl-40 pr-0">Dados do Credor</h3>
-        <div class="row">
-            <div class="column w-75">
-                <div class="content">
-                    <label class="label-input">Nome do Credor</label>
-                    <input class="input-text" type="text" style="padding-right: 50%;" id="nomeDoCredor" required>
+        <form>
+            <h3 class="pl-40 pr-0">Dados do Credor</h3>
+            <div class="row">
+                <div class="column w-75">
+                    <div class="content">
+                        <label class="label-input">Nome do Credor</label>
+                        <input class="input-text" type="text" style="padding-right: 50%;" id="nomeDoCredor" >
+                    </div>
+                </div>
+                <div class="column w-75">
+                    <div class="content">
+                        <label class="label-input">CPF do Credor</label>
+                        <input class="input-text" oninput="mascaras(this, 'cpf')" style="padding-right: 10%;" type="text"
+                            id="cpfCredor" >
+                    </div>
+                </div>
+                <div class="column w-75">
+                    <div class="content">
+                        <label class="label-input">CNPJ do Credor</label>
+                        <input class="input-text" oninput="mascaras(this, 'cnpj')" style="padding-right: 10%;" type="text"
+                            id="cnpjCredor" >
+                    </div>
                 </div>
             </div>
-            <div class="column w-75">
-                <div class="content">
-                    <label class="label-input">CPF do Credor</label>
-                    <input class="input-text" oninput="mascaras(this, 'cpf')" style="padding-right: 10%;" type="text"
-                        id="cpfCredor" >
+            <div class="row">
+                <div class="column">
+                    <div class="content">
+                        <label class="label-input">Valor:</label>
+                        <input class="input-text" type="number" id="valorNota" >
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label class="label-input">1º Vencimento</label>
+                        <input class="input-text" oninput="mascaras(this, 'data')" type="date" id="primeiroVencimento">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label class="label-input">Data Emissão</label>
+                        <input class="input-text" oninput="mascaras(this, 'data')" type="date" id="dataEmissao">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label class="label-input">Quantidade de Notas</label>
+                        <input class="input-text" type="number" id="quantidade">
+                    </div>
                 </div>
             </div>
-            <div class="column w-75">
-                <div class="content">
-                    <label class="label-input">CNPJ do Credor</label>
-                    <input class="input-text" oninput="mascaras(this, 'cnpj')" style="padding-right: 10%;" type="text"
-                        id="cnpjCredor" >
+            <h3 class="pl-40 pr-0">Dados Devedor</h3>
+            <div class="row">
+                <div class="column w-75">
+                    <div class="content">
+                        <label>Nome do Devedor</label>
+                        <input class="input-text" style="padding-right: 50%;" type="text" id="nomeDevedor" >
+                    </div>
+                </div>
+                <div class="column w-75">
+                    <div class="content">
+                        <label>CPF do devedor</label>
+                        <input class="input-text" oninput="mascaras(this, 'cpf')" style="padding-right: 10%;" type="text"
+                            id="cpfDevedor">
+                    </div>
+                </div>
+                <div class="column w-75">
+                    <div class="content">
+                        <label>CNPJ do devedor</label>
+                        <input class="input-text" oninput="mascaras(this, 'cnpj')" style="padding-right: 10%;" type="text"
+                            id="cnpjDevedor" >
+                    </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="column">
+                    <div class="content">
+                        <label>CEP</label>
+                        <input class="input-text" oninput="mascaras(this, 'cep')" type="text" id="cep" >
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Rua</label>
+                        <input class="input-text" type="text" id="rua" >
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Cidade</label>
+                        <input class="input-text" type="text" id="cidade" >
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Estado</label>
+                        <select class="input-text" id="estado" >
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Número</label>
+                        <input class="input-text" type="text" id="numero" >
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <label>Bairro</label>
+                        <input class="input-text" type="text" id="bairro" >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column w-50">
+                    <div class="content">
+                        <label>Ponto de Referência</label>
+                        <input class="input-text" type="text" style="padding-right: 100%;" id="referencia" >
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-center" type="button" onclick="carregarNota()">Emitir Nota Promissoria</button>
         </div>
-        <div class="row">
-            <div class="column">
-                <div class="content">
-                    <label class="label-input">Valor:</label>
-                    <input class="input-text" type="number" id="valorNota" required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label class="label-input">1º Vencimento</label>
-                    <input class="input-text" oninput="mascaras(this, 'data')" type="date" id="primeiroVencimento"required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label class="label-input">Data Emissão</label>
-                    <input class="input-text" oninput="mascaras(this, 'data')" type="date" id="dataEmissao"required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label class="label-input">Quantidade de Notas</label>
-                    <input class="input-text" type="number" id="quantidade"required>
-                </div>
-            </div>
-        </div>
-        <h3 class="pl-40 pr-0">Dados Devedor</h3>
-        <div class="row">
-            <div class="column w-75">
-                <div class="content">
-                    <label>Nome do Devedor</label>
-                    <input class="input-text" style="padding-right: 50%;" type="text" id="nomeDevedor" required>
-                </div>
-            </div>
-            <div class="column w-75">
-                <div class="content">
-                    <label>CPF do devedor</label>
-                    <input class="input-text" oninput="mascaras(this, 'cpf')" style="padding-right: 10%;" type="text"
-                        id="cpfDevedor">
-                </div>
-            </div>
-            <div class="column w-75">
-                <div class="content">
-                    <label>CNPJ do devedor</label>
-                    <input class="input-text" oninput="mascaras(this, 'cnpj')" style="padding-right: 10%;" type="text"
-                        id="cnpjDevedor" >
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <div class="content">
-                    <label>CEP</label>
-                    <input class="input-text" oninput="mascaras(this, 'cep')" type="text" id="cep" required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label>Rua</label>
-                    <input class="input-text" type="text" id="rua" required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label>Cidade</label>
-                    <input class="input-text" type="text" id="cidade" required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label>Estado</label>
-                    <select class="input-text" id="estado" required>
-                        <option value="">Selecione</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label>Número</label>
-                    <input class="input-text" type="text" id="numero" required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <label>Bairro</label>
-                    <input class="input-text" type="text" id="bairro" required>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column w-50">
-                <div class="content">
-                    <label>Ponto de Referência</label>
-                    <input class="input-text" type="text" style="padding-right: 100%;" id="referencia" required>
-                </div>
-            </div>
-        </div>
-        <button class="btn btn-center" type="button" onclick="carregarNota()">Emitir Nota Promissoria</button>
-    </div>
-    <br>
+        <br>
+    </form>
     <div id="nota"></div>
 </body>
 
