@@ -43,7 +43,7 @@ function carregarNota() {
     }
 
     // document.getElementById('nota').appendChild(nota);
-    document.body.innerHTML = nota;
+    document.querySelector("#nota").innerHTML = nota;
 }
 
 
